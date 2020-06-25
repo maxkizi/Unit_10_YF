@@ -14,7 +14,7 @@ public class StockQuoteServer {
    try
 	 {
 	 // Create a server socket
-	 serverSocket = new ServerSocket(3000);
+	 serverSocket = new ServerSocket(1000);
 
  	 System.out.println("Waiting for a quote request");
 	 while (true)
@@ -23,15 +23,13 @@ public class StockQuoteServer {
   	   client = serverSocket.accept();
 
          // Get the streams
-	   inbound=new BufferedReader(new
-             InputStreamReader(client.getInputStream()));	   
+	   inbound=new BufferedReader(new InputStreamReader(client.getInputStream()));
    	   outbound = client.getOutputStream();
   	   
      	   String symbol = inbound.readLine();
 
          //Generate a random price
-         String price= (new  
-                    Double(Math.random()*100)).toString();
+         String price= (new Double(Math.random()*100)).toString();
  	        outbound.write(("\n The price of "+symbol+
                                     " is " + price + "\n").getBytes());
   

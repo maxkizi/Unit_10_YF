@@ -13,11 +13,11 @@ public static void main(String[] args) {
  OutputStream outbound = null;
  BufferedReader inbound   = null;
    Socket clientSocket       = null;
-	 
+
    try
 	{
 	// Open a client socket connection
-	clientSocket = new Socket("localhost", 3000);
+	clientSocket = new Socket("localhost", 1000);
 	System.out.println("Client: " + clientSocket);
 
       // Get the streams
